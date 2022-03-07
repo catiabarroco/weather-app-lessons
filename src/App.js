@@ -7,10 +7,10 @@ export default function App() {
       <footer>
         {" "}
         This project was coded by{" "}
-        <a href="https://github.com/catiabarroco">Cátia Barroco</a> and is
+        <a href="https://github.com/catiabarroco" target="_blank" rel="noreferrer">Cátia Barroco</a> and is
         <a
           href="https://github.com/catiabarroco/weather-app-lessons"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           {" "}
           open-soureced on GitHub

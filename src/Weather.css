@@ -31,6 +31,7 @@
 
 .Weather img {
   margin: auto;
+  width: 64px;
 }
 .Weather .img-col {
   max-width: 64px;

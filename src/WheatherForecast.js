@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WheatherForecast.css";
 
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WheatherForecast(props) {
   let [forecast, setForecast] = useState(null);
   let [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.data]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
@@ -15,21 +18,19 @@ export default function WheatherForecast(props) {
   }
 
   if (loaded) {
-    console.log(forecast);
-
     return (
       <div className="WeatherForecast">
         <div className="row">
-          
           {forecast.map(function (dailyForecast, index) {
-            if (index < 6){
+            if (index < 6) {
               return (
                 <div className="col" key={index}>
                   <WeatherForecastDay date={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
-           
           })}
         </div>
       </div>
